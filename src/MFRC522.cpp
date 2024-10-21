@@ -1796,9 +1796,9 @@ bool MFRC522::MIFARE_OpenUidBackdoor(bool logErrors) {
 bool MFRC522::MIFARE_SetUid(byte *newUid, byte uidSize, bool logErrors) {
 	
 	// UID + BCC byte can not be larger than 16 together
-	if (!newUid || !uidSize || uidSize > 15) {
+	if (!newUid || !uidSize || uidSize > 16) {
 		if (logErrors) {
-			Serial.println(F("New UID buffer empty, size 0, or size > 15 given"));
+			Serial.println(F("New UID buffer empty, size 0, or size > 16 given"));
 		}
 		return false;
 	}
